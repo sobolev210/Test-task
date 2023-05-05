@@ -3,6 +3,8 @@ version: "3.9"
 services:
   sensor:
     build: sensor
+    depends_on:
+      - controller
     environment:
       - CONTROLLER_URL=http://controller:8000/sensor-data/
       - RPS=30
