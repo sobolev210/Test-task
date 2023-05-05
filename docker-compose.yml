@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  sensor:
+    build: sensor
+    environment:
+      - CONTROLLER_URL=http://controller:8000/sensor-data/
+      - RPS=30
+
+  controller:
+    build: controller
+
+
+  manipulator:
+    build: manipulator
